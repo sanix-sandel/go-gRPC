@@ -1,1 +1,1 @@
-# Custom-Newsfeed
+# gRPC server-client with Golang
