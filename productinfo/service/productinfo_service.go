@@ -16,7 +16,7 @@ type server struct {
 func (s *server) AddProduct(ctx context.Context, in *pb.Product) (*pb.ProductID, error) {
 	out, err := uuid.NewV4()
 	if err != nil {
-		return nil, status.Error(codes.Internal, "Error while generating Product ID", err)
+		return nil, status.Errorf(codes.Internal, "Error while generating Product ID", err)
 	}
 	in.Id = out.String()
 	if s.productMap == nil {
